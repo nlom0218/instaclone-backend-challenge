@@ -2,7 +2,7 @@
 
 Instaclone Backend.
 
-## User:
+## User
 
 - [ ] Create Account
 - [ ] See Profile
