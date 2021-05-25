@@ -1,17 +1,10 @@
-import { ApolloServer, gql } from "apollo-server"
+require("dotenv").config()
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
-
-const resolvers = {
-  Query: {
-    hello: () => "baby"
-  }
-}
+import { ApolloServer } from "apollo-server"
+import { typeDefs, resolvers } from "./schema"
 
 const server = new ApolloServer({ typeDefs, resolvers })
 
-server.listen().then(({ url }) => console.log(`🚀  Server ready at ${url}`))
+const PORT = process.env.PORT
+
+server.listen(PORT).then(() => console.log(`🚀  Server ready at http://localhost:${PORT}/`))
