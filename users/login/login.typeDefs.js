@@ -2,6 +2,6 @@ import { gql } from "apollo-server-core";
 
 export default gql`
   type Mutation {
-    login(username: String!, password: String!): MutationResult
+    login(username: String!, password: String!): MutationResult!
   }
 `
