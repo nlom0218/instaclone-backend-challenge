@@ -7,10 +7,13 @@ export default {
       try {
         const existingUser = await client.user.findFirst({ where: { OR: [{ username }, { email }] } })
         if (existingUser) {
-          throw new Error("Username or Email is already taken.")
+          return {
+            ok: false,
+            error: "Username or Email is already taken."
+          }
         }
         const uglyPassword = await bcrypt.hash(password, 10)
-        return client.user.create({
+        await client.user.create({
           data: {
             username,
             email,
@@ -19,6 +22,9 @@ export default {
             password: uglyPassword
           }
         })
+        return {
+          ok: true
+        }
       } catch (err) {
         return err
       }

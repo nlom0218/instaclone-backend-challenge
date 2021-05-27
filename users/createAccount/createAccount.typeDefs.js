@@ -8,5 +8,5 @@ export default gql`
       username: String!
       email: String!
       password: String!
-    ): User
+    ): MutationResult
   }`
