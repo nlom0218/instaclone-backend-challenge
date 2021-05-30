@@ -1,14 +1,13 @@
 import client from "../../client"
 import bcrypt from "bcrypt"
-import { protectedResolover } from "../users.utils"
+import { protectedResolver } from "../users.utils"
 import { createWriteStream } from "fs"
 
 
 export default {
   Mutation: {
-    editProfile: protectedResolover(
+    editProfile: protectedResolver(
       async (_, { firstName, lastName, username, email, password: newPassword, bio, avatar }, { loggedInUser }) => {
-
         let avatarUrl = null
         if (avatar) {
           const { filename, createReadStream } = await avatar
