@@ -14,7 +14,7 @@ export default {
         } else if (ok.username === loggedInUser.username) {
           return {
             ok: false,
-            error: "You don't follow you."
+            error: "You don't follow yourself."
           }
         }
         await client.user.update({
