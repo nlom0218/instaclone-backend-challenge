@@ -5,7 +5,10 @@ export default {
   Mutation: {
     followUser: protectedResolver(async (_, { username }, { loggedInUser }) => {
       try {
-        const ok = await client.user.findUnique({ where: { username } })
+        const ok = await client.user.findUnique({
+          where: { username },
+          select: { username: true }
+        })
         if (!ok) {
           return {
             ok: false,
