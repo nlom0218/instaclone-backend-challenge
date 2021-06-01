@@ -30,6 +30,7 @@ export default {
 
       })
       return Boolean(exists)
-    }
+    },
+    photos: ({ id }) => client.photo.findMany({ where: { userId: id } })
   }
 }
