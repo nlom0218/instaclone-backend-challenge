@@ -7,6 +7,7 @@ export default gql`
     file: String
     caption: String
     hashtags: [Hashtag]
+    likes: Int!
     createdAt: String!
     updatedAt: String!
   }
@@ -18,5 +19,11 @@ export default gql`
     updatedAt: String!
 
     totalPhotos: Int!
+  }
+  type Like {
+    id: Int!
+    photo: Photo!
+    createdAt: String!
+    updatedAt: String!
   }
 `

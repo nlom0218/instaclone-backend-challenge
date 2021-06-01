@@ -10,7 +10,6 @@ export default {
           where: { id, userId: loggedInUser.id },
           include: { hashtags: { select: { hashtag: true } } }
         })
-        console.log(oldPhoto.hashtags);
         if (!oldPhoto) {
           return {
             ok: false,
