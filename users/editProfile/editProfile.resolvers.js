@@ -17,7 +17,6 @@ export default {
           readStream.pipe(writeStream)
           avatarUrl = `http://localhost:4000/static/${newFilename}`
         }
-
         let uglyPassword = null
         if (newPassword) {
           uglyPassword = await bcrypt.hash(newPassword, 10)

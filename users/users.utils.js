@@ -1,4 +1,3 @@
-import { checkValidationErrors } from "@graphql-tools/utils"
 import jwt from "jsonwebtoken"
 import client from "../client"
 
