@@ -13,6 +13,7 @@ export default gql`
 
     # computed field
     isMine: Boolean!
+    comments: Int!
   }
   type Hashtag {
     id: Int!
