@@ -10,6 +10,9 @@ export default gql`
     likes: Int!
     createdAt: String!
     updatedAt: String!
+
+    # computed field
+    isMine: Boolean!
   }
   type Hashtag {
     id: Int!
